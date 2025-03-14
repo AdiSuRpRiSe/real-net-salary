@@ -10,8 +10,8 @@
   <div class="container">
   <a href="../index.html">Wróć na stronę główną</a>
   <h1>Kalkulator Realnych Zarobków UoP</h1>
-  <p>Witaj w kalkulatorze realnych zarobków na umowie o pracę. Wypełnij poniższy formularz, aby obliczyć realne wynagrodzenie netto, stawkę godzinową netto oraz inne ważne informacje.</p> 
-  <p>Po wypełenieniu odpowiednich części kalkulator weśmie pod uwagę czas, który poświęcasz na dojazd do pracy oraz liczbę bezpłatnych nadgodzin, a następnie obliczy realną stawkę oraz wynagrodzenie.</p>
+  <p>Witaj w kalkulatorze realnych zarobków na umowie o pracę. Wypełnij poniższy formularz, aby obliczyć realne wynagrodzenie netto.</p> 
+  <p>Po wypełenieniu odpowiednich części kalkulator weźmie pod uwagę czas i koszt dojazdu do pracy oraz liczbę bezpłatnych nadgodzin.</p>
   <form id="calculator-form">
     <!-- Sekcja Umowa -->
     <h2>Umowa</h2>
@@ -21,7 +21,7 @@
       <input type="text" inputmode="decimal" pattern="^\d+([.,]\d{1,2})?$" id="brutto" name="brutto" value="4666.00" placeholder="Wprowadź kwotę brutto">
     </p>
     <!-- Pole PIT-2, widoczne tylko, gdy ulga26 = "nie" (więcej niż 26 lat) -->
-    <p>
+    <p class="radio-group">
       Ulga dla osób poniżej 26. roku życia:
       <label>
         <input type="radio" name="ulga26" value="tak" checked> Tak
@@ -41,7 +41,7 @@
         </select>
       </p>
     </div>
-    <p>
+    <p class="radio-group">
       Praca w miejscu zamieszkania:
       <label>
         <input type="radio" name="miejscePracy" value="tak" checked> Tak
@@ -50,7 +50,7 @@
         <input type="radio" name="miejscePracy" value="nie"> Nie
       </label>
     </p>
-    <p>
+    <p class="radio-group">
       Czy uczestniczysz w PPK:
       <label>
         <input type="radio" name="ppk" value="tak"> Tak
@@ -72,7 +72,7 @@
     
     <!-- Sekcja Nadgodziny -->
     <h2>Nadgodziny</h2>
-    <p>
+    <p class="radio-group">
       Uwzględnienie nadgodzin w kalkulacji:
       <label>
         <input type="radio" name="uwzglednijNadgodziny" value="tak" checked> Tak
@@ -82,7 +82,7 @@
       </label>
     </p>
     <div id="nadgodziny-container">
-      <p>
+      <p class="radio-group">
         Nadgodziny:
         <label>
           <input type="radio" name="nadgodziny" value="regularne" checked> Regularne
@@ -135,7 +135,7 @@
     
     <!-- Sekcja Transport -->
     <h2>Transport</h2>
-    <p>
+    <p class="radio-group">
       Uwzględnienie transportu w kalkulacji:
       <label>
         <input type="radio" name="uwzglednijTransport" value="tak" checked> Tak
@@ -148,17 +148,13 @@
       <p>
         <label for="czas-dojazdu">Czas dojazdu w jedną stronę:</label>
         <select id="czas-dojazdu" name="czas-dojazdu">
-          <option value="10">10 min</option>
-          <option value="20">20 min</option>
+          <option value="15">15 min</option>
           <option value="30">30 min</option>
-          <option value="40">40 min</option>
-          <option value="50">50 min</option>
+          <option value="45">45 min</option>
           <option value="60">1 h</option>
-          <option value="70">1 h 10 min</option>
-          <option value="80">1 h 20 min</option>
+          <option value="75">1 h 15 min</option>
           <option value="90">1 h 30 min</option>
-          <option value="100">1 h 40 min</option>
-          <option value="110">1 h 50 min</option>
+          <option value="105">1 h 45 min</option>
           <option value="120">2 h</option>
         </select>
       </p>
@@ -178,24 +174,42 @@
   <!-- Sekcja wyników kalkulacji -->
   <div id="results" style="display: none;">
     <h2>Wyniki kalkulacji</h2>
-    <p>Kalkulacje przeprowadzono, przy założeniu domyślnego wymiaru czasu w miesiącu równego 160 h.</p>
+    <p>Kalkulacje przeprowadzono przy założeniu wymiaru czasu w miesiącu równego 160 h.</p>
     <!-- Grupa 1: Realne wynagrodzenie netto + realna stawka godzinowa netto -->
     <div id="real-net-results">
-      <h3>Realne wynagrodzenie netto</h3>
-      <p id="real-net-salary">Realne wynagrodzenie netto: <span></span></p>
-      <p id="real-net-hourly-rate">Realna stawka godzinowa netto: <span></span></p>
-      <p id="real-net-net">Procent wynagrodzenia netto: <span></span></p>
-      <p id="real-net-gross">Procent wynagrodzenia brutto: <span></span></p>
-      <p id="real-work-time">Realny czas pracy (z dojazdami): <span></span></p>
-      <p id="real-transport">Koszt dojazdów: <span></span></p>
-    </div>
+        <h3>Realne wynagrodzenie netto</h3>
+      
+        <p id="real-net-salary">
+          Realne wynagrodzenie netto: <span></span>
+          <span class="info" title="Wynagrodzenie netto po odjęciu kosztów transportu">?</span>
+        </p>
+      
+        <p id="real-net-hourly-rate">Realna stawka godzinowa netto: <span></span>
+          <span class="info" title="Stawka godzinowa uwzględniająca czas poświęcony na transport oraz nadgodziny">?</span>
+        </p>
+      
+        <p id="real-net-net">Procent wynagrodzenia netto: <span></span>
+          <span class="info" title="Procent realnego wynagrodzenia netto względem nominalnego wynagrodzenia netto">?</span>
+        </p>
+      
+        <p id="real-net-gross">Procent wynagrodzenia brutto: <span></span>
+          <span class="info" title="Procent realnego wynagrodzenia netto względem wynagrodzenia brutto">?</span>
+        </p>
+      
+        <p id="real-work-time">Realny czas pracy (z dojazdami): <span></span></p>
+      
+        <p id="real-transport">Koszt dojazdów: <span></span></p>
+      </div>
+      
     
     <!-- Grupa 2: Wynagrodzenie netto + stawka godzinowa netto -->
     <div id="net-result">
       <h3>Wynagrodzenie netto</h3>
       <p id="net-salary">Wynagrodzenie netto: <span></span></p>
       <p id="net-hourly-rate">Stawka godzinowa netto: <span></span></p>
-      <p id="net-gross">Procent wynagrodzenia brutto: <span></span></p>
+      <p id="net-gross">Procent wynagrodzenia brutto: <span></span>
+        <span class="info" title="Procent realnego wynagrodzenia netto względem wynagrodzenia brutto">?</span>
+      </p>
     </div>
     <div id="net-result-components">
       <h3>Składki i zaliczki</h3>

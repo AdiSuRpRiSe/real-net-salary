@@ -1,3 +1,33 @@
+document.getElementById("github-issue").addEventListener("click", function(event) {
+  event.preventDefault();
+  const title = encodeURIComponent("Nowa sugestia dotycząca kalkulatora");
+  const body = encodeURIComponent("Opis problemu lub sugestii...");
+  window.open(`https://github.com/AdiSuRpRiSe/real-net-salary/issues/new?title=${title}&body=${body}`, '_blank');
+});
+
+document.getElementById("google-form").addEventListener("click", function(event) {
+  event.preventDefault();
+  window.open(`https://google.com`, '_blank');
+});
+
+document.getElementById("accept-cookies").addEventListener("click", function() {
+  document.getElementById("cookie-banner").style.display = "none";
+  localStorage.setItem("cookiesAccepted", "true");
+});
+
+if (localStorage.getItem("cookiesAccepted")) {
+  document.getElementById("cookie-banner").style.display = "none";
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const infoElements = document.querySelectorAll('.info');
+  infoElements.forEach(function(info) {
+    info.addEventListener('click', function() {
+      alert(info.getAttribute('title'));
+    });
+  });
+});
+
     // Dynamiczne wyświetlanie pól PPK
     const ppkRadios = document.getElementsByName('ppk');
     const ppkFields = document.getElementById('ppk-fields');

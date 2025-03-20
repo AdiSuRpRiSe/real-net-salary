@@ -1,235 +1,256 @@
 <!DOCTYPE html>
 <html lang="pl-PL">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J00WHM5Q48"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+   gtag('config', 'G-J00WHM5Q48');
+  </script>
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="3657d289-a7cb-48e7-9f5c-5f878b22c7d6" data-blockingmode="auto" type="text/javascript"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4376493438477023"
+     crossorigin="anonymous"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Realne Zarobki UoP</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-  <a href="../index.html">Wróć na stronę główną</a>
-  <h1>Kalkulator Realnych Zarobków UoP</h1>
-  <p>Witaj w kalkulatorze realnych zarobków na umowie o pracę. Wypełnij poniższy formularz, aby obliczyć realne wynagrodzenie netto.</p> 
-  <p>Po wypełenieniu odpowiednich części kalkulator weźmie pod uwagę czas i koszt dojazdu do pracy oraz liczbę bezpłatnych nadgodzin.</p>
-  <form id="calculator-form">
-    <!-- Sekcja Umowa -->
-    <h2>Umowa</h2>
-    <!-- Wynagrodzenie jako pierwsze pole -->
-    <p>
-      <label for="brutto">Wynagrodzenie Brutto (PLN):</label>
-      <input type="text" inputmode="decimal" pattern="^\d+([.,]\d{1,2})?$" id="brutto" name="brutto" value="4666.00" placeholder="Wprowadź kwotę brutto">
-    </p>
-    <!-- Pole PIT-2, widoczne tylko, gdy ulga26 = "nie" (więcej niż 26 lat) -->
-    <p class="radio-group">
-      Ulga dla osób poniżej 26. roku życia:
-      <label>
-        <input type="radio" name="ulga26" value="tak" checked> Tak
-      </label>
-      <label>
-        <input type="radio" name="ulga26" value="nie"> Nie
-      </label>
-    </p>
-    <div id="pit2-container" style="display: none;">
-      <p>
-        U ilu pracodawców złożono PIT-2:
-        <select id="pit2" name="pit2">
-          <option value="0">Zero</option>
-          <option value="300" selected>Jednego</option>
-          <option value="150">Dwóch</option>
-          <option value="100">Trzech</option>
-        </select>
-      </p>
-    </div>
-    <p class="radio-group">
-      Praca w miejscu zamieszkania:
-      <label>
-        <input type="radio" name="miejscePracy" value="tak" checked> Tak
-      </label>
-      <label>
-        <input type="radio" name="miejscePracy" value="nie"> Nie
-      </label>
-    </p>
-    <p class="radio-group">
-      Czy uczestniczysz w PPK:
-      <label>
-        <input type="radio" name="ppk" value="tak"> Tak
-      </label>
-      <label>
-        <input type="radio" name="ppk" value="nie" checked> Nie
-      </label>
-    </p>
-    <div id="ppk-fields" style="display: none;">
-      <p>
-        <label for="ppk-employee">Stawka pracownika (%):</label>
-        <input type="number" id="ppk-employee" name="ppk-employee" step="0.5" min="2" max="4" value="2" placeholder="2 - 4">
-      </p>
-      <p>
-        <label for="ppk-employer">Stawka pracodawcy (%):</label>
-        <input type="number" id="ppk-employer" name="ppk-employer" step="0.5" min="1.5" max="4" value="1.5" placeholder="1.5 - 4">
-      </p>
-    </div>
+  <div id="cookie-banner">
+    Ta strona używa ciasteczek do analizy ruchu i personalizacji reklam. <button id="accept-cookies">Akceptuj</button>
+  </div>
+  <div class="page-layout">
+    <div class="ad-banner left-ad">Reklama</div>
+      <div class="main-content">
+        <div class="container">
+          <div class="top-bar">
+            <a href="https://github.com/AdiSuRpRiSe" class="left-link">Wróć na stronę główną</a>
+            <div class="suggestions">
+              <p>Zgłoś sugestię:
+                <a href="#" id="github-issue">GitHub</a>
+                <a href="#" id="google-form">Google Forms</a>
+              </p>
+            </div>
+          </div>
+          <h1>Kalkulator Realnych Zarobków UoP</h1>
+          <p>Witaj w kalkulatorze realnych zarobków na umowie o pracę. Wypełnij poniższy formularz, aby obliczyć realne wynagrodzenie netto.</p> 
+          <p>Po wypełenieniu odpowiednich części kalkulator weźmie pod uwagę czas i koszt dojazdu do pracy oraz liczbę bezpłatnych nadgodzin.</p>
+          <div class="content">
+            <form id="calculator-form">
+              <!-- Sekcja Umowa -->
+              <h2>Umowa</h2>
+              <p>
+                <label for="brutto">Wynagrodzenie Brutto (PLN):</label>
+                <input type="text" inputmode="decimal" pattern="^\d+([.,]\d{1,2})?$" id="brutto" name="brutto" value="4666.00" placeholder="Wprowadź kwotę brutto">
+              </p>
+              <!-- Pole PIT-2, widoczne tylko, gdy ulga26 = "nie" (więcej niż 26 lat) -->
+              <p class="radio-group">
+                Ulga dla osób poniżej 26. roku życia:
+                <label>
+                  <input type="radio" name="ulga26" value="tak" checked> Tak
+                </label>
+                <label>
+                  <input type="radio" name="ulga26" value="nie"> Nie
+                </label>
+              </p>
+              <div id="pit2-container" style="display: none;">
+                <p>
+                  U ilu pracodawców złożono PIT-2:
+                  <select id="pit2" name="pit2">
+                  <option value="0">Zero</option>
+                  <option value="300" selected>Jednego</option>
+                  <option value="150">Dwóch</option>
+                  <option value="100">Trzech</option>
+                  </select>
+                </p>
+              </div>
+              <p class="radio-group">
+                Praca w miejscu zamieszkania:
+                <label>
+                  <input type="radio" name="miejscePracy" value="tak" checked> Tak
+                </label>
+                <label>
+                  <input type="radio" name="miejscePracy" value="nie"> Nie
+                </label>
+              </p>
+              <p class="radio-group">
+                Czy uczestniczysz w PPK:
+                <label>
+                  <input type="radio" name="ppk" value="tak"> Tak
+                </label>
+                <label>
+                  <input type="radio" name="ppk" value="nie" checked> Nie
+                </label>
+              </p>
+              <div id="ppk-fields" style="display: none;">
+                <p>
+                  <label for="ppk-employee">Stawka pracownika (%):</label>
+                    <input type="number" id="ppk-employee" name="ppk-employee" step="0.5" min="2" max="4" value="2" placeholder="2 - 4">
+                </p>
+                <p>
+                  <label for="ppk-employer">Stawka pracodawcy (%):</label>
+                    <input type="number" id="ppk-employer" name="ppk-employer" step="0.5" min="1.5" max="4" value="1.5" placeholder="1.5 - 4">
+                </p>
+              </div>
+              <!-- Sekcja Nadgodziny -->
+              <h2>Nadgodziny</h2>
+              <p class="radio-group">
+                Uwzględnienie nadgodzin w kalkulacji:
+                <label>
+                  <input type="radio" name="uwzglednijNadgodziny" value="tak" checked> Tak
+                </label>
+                <label>
+                  <input type="radio" name="uwzglednijNadgodziny" value="nie"> Nie
+                </label>
+              </p>
+              <div id="nadgodziny-container">
+                <p class="radio-group">
+                Nadgodziny:
+                <label>
+                  <input type="radio" name="nadgodziny" value="regularne" checked> Regularne
+                </label>
+                <label>
+                  <input type="radio" name="nadgodziny" value="nieregularne"> Nieregularne
+                </label>
+                </p>
+                <div id="nadgodziny-regularne">
+                  <label for="nadgodziny-dziennie">Bezpłatne nadgodziny dziennie:</label>
+                  <select id="nadgodziny-dziennie" name="nadgodziny-dziennie">
+                  <option value="0.25">15 min</option>
+                  <option value="0.5">30 min</option>
+                  <option value="0.75">45 min</option>
+                  <option value="1">1 h</option>
+                  <option value="1.25">1 h 15 min</option>
+                  <option value="1.5">1 h 30 min</option>
+                  <option value="1.75">1 h 45 min</option>
+                  <option value="2">2 h</option>
+                  <option value="2.25">2 h 15 min</option>
+                  <option value="2.5">2 h 30 min</option>
+                  </select>
+                </div>
+                <div id="nadgodziny-nieregularne" style="display: none;">
+                  <label for="nadgodziny-miesiecznie">Bezpłatne nadgodziny miesięcznie:</label>
+                  <select id="nadgodziny-miesiecznie" name="nadgodziny-miesiecznie">
+                    <option value="1">1 h</option>
+                    <option value="2">2 h</option>
+                    <option value="3">3 h</option>
+                    <option value="4">4 h</option>
+                    <option value="5">5 h</option>
+                    <option value="6">6 h</option>
+                    <option value="7">7 h</option>
+                    <option value="8">8 h</option>
+                    <option value="9">9 h</option>
+                    <option value="10">10 h</option>
+                    <option value="11">11 h</option>
+                    <option value="12">12 h</option>
+                    <option value="13">13 h</option>
+                    <option value="14">14 h</option>
+                    <option value="15">15 h</option>
+                    <option value="16">16 h</option>
+                    <option value="17">17 h</option>
+                    <option value="18">18 h</option>
+                    <option value="19">19 h</option>
+                    <option value="20">20 h</option>
+                  </select>
+                </div>
+              </div>
     
-    <!-- Sekcja Nadgodziny -->
-    <h2>Nadgodziny</h2>
-    <p class="radio-group">
-      Uwzględnienie nadgodzin w kalkulacji:
-      <label>
-        <input type="radio" name="uwzglednijNadgodziny" value="tak" checked> Tak
-      </label>
-      <label>
-        <input type="radio" name="uwzglednijNadgodziny" value="nie"> Nie
-      </label>
-    </p>
-    <div id="nadgodziny-container">
-      <p class="radio-group">
-        Nadgodziny:
-        <label>
-          <input type="radio" name="nadgodziny" value="regularne" checked> Regularne
-        </label>
-        <label>
-          <input type="radio" name="nadgodziny" value="nieregularne"> Nieregularne
-        </label>
-      </p>
-      <div id="nadgodziny-regularne">
-        <label for="nadgodziny-dziennie">Bezpłatne nadgodziny dziennie:</label>
-        <select id="nadgodziny-dziennie" name="nadgodziny-dziennie">
-          <option value="0.25">15 min</option>
-          <option value="0.5">30 min</option>
-          <option value="0.75">45 min</option>
-          <option value="1">1 h</option>
-          <option value="1.25">1 h 15 min</option>
-          <option value="1.5">1 h 30 min</option>
-          <option value="1.75">1 h 45 min</option>
-          <option value="2">2 h</option>
-          <option value="2.25">2 h 15 min</option>
-          <option value="2.5">2 h 30 min</option>
-        </select>
-      </div>
-      <div id="nadgodziny-nieregularne" style="display: none;">
-        <label for="nadgodziny-miesiecznie">Bezpłatne nadgodziny miesięcznie:</label>
-        <select id="nadgodziny-miesiecznie" name="nadgodziny-miesiecznie">
-          <option value="1">1 h</option>
-          <option value="2">2 h</option>
-          <option value="3">3 h</option>
-          <option value="4">4 h</option>
-          <option value="5">5 h</option>
-          <option value="6">6 h</option>
-          <option value="7">7 h</option>
-          <option value="8">8 h</option>
-          <option value="9">9 h</option>
-          <option value="10">10 h</option>
-          <option value="11">11 h</option>
-          <option value="12">12 h</option>
-          <option value="13">13 h</option>
-          <option value="14">14 h</option>
-          <option value="15">15 h</option>
-          <option value="16">16 h</option>
-          <option value="17">17 h</option>
-          <option value="18">18 h</option>
-          <option value="19">19 h</option>
-          <option value="20">20 h</option>
-        </select>
-      </div>
-    </div>
-    
-    <!-- Sekcja Transport -->
-    <h2>Transport</h2>
-    <p class="radio-group">
-      Uwzględnienie transportu w kalkulacji:
-      <label>
-        <input type="radio" name="uwzglednijTransport" value="tak" checked> Tak
-      </label>
-      <label>
-        <input type="radio" name="uwzglednijTransport" value="nie"> Nie
-      </label>
-    </p>
-    <div id="transport-container">
-      <p>
-        <label for="czas-dojazdu">Czas dojazdu w jedną stronę:</label>
-        <select id="czas-dojazdu" name="czas-dojazdu">
-          <option value="15">15 min</option>
-          <option value="30">30 min</option>
-          <option value="45">45 min</option>
-          <option value="60">1 h</option>
-          <option value="75">1 h 15 min</option>
-          <option value="90">1 h 30 min</option>
-          <option value="105">1 h 45 min</option>
-          <option value="120">2 h</option>
-        </select>
-      </p>
-      <p>
-        <label for="odleglosc">Odległość do pracy (km, w jedną stronę):</label>
-        <input type="number" id="odleglosc" name="odleglosc" step="0.1" value="10" placeholder="Odległość w km"> 
-      </p>
-      <p>
-        <label for="koszt-km">Koszt przejazdu 1 km (PLN/km):</label>
-        <input type="number" id="koszt-km" name="koszt-km" step="0.01" value="0.50" placeholder="Koszt przejazdu 1 km">
-      </p>
-    </div>
-    
-    <button type="submit">Oblicz</button>
-  </form>
+              <!-- Sekcja Transport -->
+              <h2>Transport</h2>
+              <p class="radio-group">
+                Uwzględnienie transportu w kalkulacji:
+                <label>
+                  <input type="radio" name="uwzglednijTransport" value="tak" checked> Tak
+                </label>
+                <label>
+                  <input type="radio" name="uwzglednijTransport" value="nie"> Nie
+                </label>
+              </p>
+              <div id="transport-container">
+                <p>
+                  <label for="czas-dojazdu">Czas dojazdu w jedną stronę:</label>
+                  <select id="czas-dojazdu" name="czas-dojazdu">
+                    <option value="15">15 min</option>
+                    <option value="30">30 min</option>
+                    <option value="45">45 min</option>
+                    <option value="60">1 h</option>
+                    <option value="75">1 h 15 min</option>
+                    <option value="90">1 h 30 min</option>
+                    <option value="105">1 h 45 min</option>
+                    <option value="120">2 h</option>
+                  </select>
+                </p>
+                <p>
+                  <label for="odleglosc">Odległość do pracy (km, w jedną stronę):</label>
+                  <input type="number" id="odleglosc" name="odleglosc" step="0.1" value="10" placeholder="Odległość w km"> 
+                </p>
+                <p>
+                  <label for="koszt-km">Koszt przejazdu 1 km (PLN/km):</label>
+                  <input type="number" id="koszt-km" name="koszt-km" step="0.01" value="0.50" placeholder="Koszt przejazdu 1 km">
+                </p>
+              </div>
+              <button type="submit">Oblicz</button>
+            </form>
+            <!-- Sekcja wyników kalkulacji -->
+            <div id="results" style="display: none;">
+              <h2>Wyniki kalkulacji</h2>
+              <p>Kalkulacje przeprowadzono przy założeniu wymiaru czasu w miesiącu równego 160 h.</p>
+              <!-- Grupa 1: Realne wynagrodzenie netto + realna stawka godzinowa netto -->
+              <div id="real-net-results">
+                <h3>Realne wynagrodzenie netto</h3>
+                <p id="real-net-salary">Realne wynagrodzenie netto: <span></span>
+                 <span class="info" title="Wynagrodzenie netto po odjęciu kosztów transportu">?</span>
+                </p>
+                <p id="real-net-hourly-rate">Realna stawka godzinowa netto: <span></span>
+                  <span class="info" title="Stawka godzinowa uwzględniająca czas poświęcony na transport oraz nadgodziny">?</span>
+                </p>
+                <p id="real-net-net">Procent wynagrodzenia netto: <span></span>
+                  <span class="info" title="Procent realnego wynagrodzenia netto względem nominalnego wynagrodzenia netto">?</span>
+                </p>
+                <p id="real-net-gross">Procent wynagrodzenia brutto: <span></span>
+                  <span class="info" title="Procent realnego wynagrodzenia netto względem wynagrodzenia brutto">?</span>
+                </p>
+                <p id="real-work-time">Realny czas pracy (z dojazdami): <span></span></p>
+                <p id="real-transport">Koszt dojazdów: <span></span></p>
+              </div>
+              <!-- Grupa 2: Wynagrodzenie netto + stawka godzinowa netto -->
+              <div id="net-result">
+                <h3>Wynagrodzenie netto</h3>
+                <p id="net-salary">Wynagrodzenie netto: <span></span></p>
+                <p id="net-hourly-rate">Stawka godzinowa netto: <span></span></p>
+                <p id="net-gross">Procent wynagrodzenia brutto: <span></span>
+                  <span class="info" title="Procent realnego wynagrodzenia netto względem wynagrodzenia brutto">?</span>
+                </p>
+              </div>
+              <div id="net-result-components">
+                <h3>Składki i zaliczki</h3>
+                <p id="pension-insurance">Ubezpieczenie emerytalne: <span></span></p>
+                <p id="disability-insurance">Ubezpieczenie rentowe: <span></span></p>
+                <p id="sickness-insurance">Ubezpieczenie chorobowe: <span></span></p>
+                <p id="health-insurance">Ubezpieczenie zdrowotne: <span></span></p>
+                <p id="pit-advance">Zaliczka na PIT: <span></span></p>
+                <!-- Pole Składka PPK, widoczne tylko przy korzystaniu z PPK -->
+                <div id="ppk-result" style="display: none;">
+                  <p id="ppk-contribution">Składka PPK: <span></span></p>
+                </div>
+              </div>
+              <!-- Grupa 3: Wynagrodzenie brutto + stawka godzinowa brutto -->
+              <div id="gross-result">
+                <h3>Wynagrodzenie brutto</h3>
+                <p id="gross-salary">Wynagrodzenie brutto: <span></span></p>
+                <p id="gross-hourly-rate">Stawka godzinowa brutto: <span></span></p>
+              </div>
+            </div>
+          </div>
   
-  <!-- Sekcja wyników kalkulacji -->
-  <div id="results" style="display: none;">
-    <h2>Wyniki kalkulacji</h2>
-    <p>Kalkulacje przeprowadzono przy założeniu wymiaru czasu w miesiącu równego 160 h.</p>
-    <!-- Grupa 1: Realne wynagrodzenie netto + realna stawka godzinowa netto -->
-    <div id="real-net-results">
-        <h3>Realne wynagrodzenie netto</h3>
-      
-        <p id="real-net-salary">
-          Realne wynagrodzenie netto: <span></span>
-          <span class="info" title="Wynagrodzenie netto po odjęciu kosztów transportu">?</span>
-        </p>
-      
-        <p id="real-net-hourly-rate">Realna stawka godzinowa netto: <span></span>
-          <span class="info" title="Stawka godzinowa uwzględniająca czas poświęcony na transport oraz nadgodziny">?</span>
-        </p>
-      
-        <p id="real-net-net">Procent wynagrodzenia netto: <span></span>
-          <span class="info" title="Procent realnego wynagrodzenia netto względem nominalnego wynagrodzenia netto">?</span>
-        </p>
-      
-        <p id="real-net-gross">Procent wynagrodzenia brutto: <span></span>
-          <span class="info" title="Procent realnego wynagrodzenia netto względem wynagrodzenia brutto">?</span>
-        </p>
-      
-        <p id="real-work-time">Realny czas pracy (z dojazdami): <span></span></p>
-      
-        <p id="real-transport">Koszt dojazdów: <span></span></p>
-      </div>
-      
-    
-    <!-- Grupa 2: Wynagrodzenie netto + stawka godzinowa netto -->
-    <div id="net-result">
-      <h3>Wynagrodzenie netto</h3>
-      <p id="net-salary">Wynagrodzenie netto: <span></span></p>
-      <p id="net-hourly-rate">Stawka godzinowa netto: <span></span></p>
-      <p id="net-gross">Procent wynagrodzenia brutto: <span></span>
-        <span class="info" title="Procent realnego wynagrodzenia netto względem wynagrodzenia brutto">?</span>
-      </p>
-    </div>
-    <div id="net-result-components">
-      <h3>Składki i zaliczki</h3>
-      <p id="pension-insurance">Ubezpieczenie emerytalne: <span></span></p>
-      <p id="disability-insurance">Ubezpieczenie rentowe: <span></span></p>
-      <p id="sickness-insurance">Ubezpieczenie chorobowe: <span></span></p>
-      <p id="health-insurance">Ubezpieczenie zdrowotne: <span></span></p>
-      <p id="pit-advance">Zaliczka na PIT: <span></span></p>
-    <!-- Pole Składka PPK, widoczne tylko przy korzystaniu z PPK -->
-      <div id="ppk-result" style="display: none;">
-        <p id="ppk-contribution">Składka PPK: <span></span></p>
       </div>
     </div>
-    <div id="gross-result">
-      <h3>Wynagrodzenie brutto</h3>
-      <p id="gross-salary">Wynagrodzenie brutto: <span></span></p>
-      <p id="gross-hourly-rate">Stawka godzinowa brutto: <span></span></p>
-    </div>
-    </div> 
-  </div>  
+    <div class="ad-banner right-ad">Reklama</div>
+  </div>
+  <div class="bottom-ad">Reklama</div>
   <script src="script.js"></script>
 </body>
 </html>
